@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --oasen-blue: #26b4f4;
+    --oasen-blue-dark: #109ede;
+  }
+
+  @font-face {
+    font-family: "strada";
+    src: font-url("./fonts/strada.ttf");
+    format: ("truetype");
+  }
+}
+
+@layer components {
+  .oasenh1 {
+    @apply font-strada text-blue-oasen text-3xl font-bold;
+  }
+  .oasenwhite {
+    @apply font-strada text-white text-3xl font-bold;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
