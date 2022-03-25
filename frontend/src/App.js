@@ -7,12 +7,12 @@ function App() {
       <WaterShader />
       <div className="absolute flex top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-screen">
         <div className="w-1/2 flex justify-center">
-          <div className="relative w-[40rem] h-[40rem]">
+          <div className="relative w-[60rem] h-[70rem]">
             <WaterDrop />
           </div>
         </div>
         <div className="w-1/2 flex justify-center">
-          <div className="relative w-[40rem] h-[40rem]">
+          <div className="relative w-[60rem] h-[70rem]">
             <WaterDrop />
           </div>
         </div>

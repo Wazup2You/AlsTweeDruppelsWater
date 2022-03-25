@@ -19,10 +19,12 @@ const CameraControls = () => {
   useFrame(() => controls.current.update());
   return (
     <orbitControls
+      enablePan={false}
+      enableZoom={false}
+      maxPolarAngle={Math.PI / 2}
+      minPolarAngle={Math.PI / 2}
       ref={controls}
       args={[camera, domElement]}
-      autoRotate={true}
-      enableZoom={false}
     />
   );
 };
@@ -52,13 +54,16 @@ const Drop = () => {
 
   // const [active, setActive] = useState(false);
 
-  // useFrame(({clock})=>{
-  //     mesh.current.rotation.x = Math.sin(clock.getElapsedTime());
-  // })
+  // useFrame(({ clock }) => {
+  //   // mesh.current.rotation.x = Math.sin(clock.getElapsedTime());
+  // });
 
-  // const texture = useMemo(() => new THREE.TextureLoader().load(goal), []);
-  // texture.encoding = THREE.sRGBEncoding;
-  // texture.mapping = THREE.EquirectangularReflectionMapping;
+  const texture = React.useMemo(
+    () => new THREE.TextureLoader().load("waternormals.jpg"),
+    []
+  );
+  texture.encoding = THREE.sRGBEncoding;
+  texture.mapping = THREE.EquirectangularReflectionMapping;
   return (
     <mesh
       ref={mesh}
@@ -66,13 +71,23 @@ const Drop = () => {
       castShadow
       geometry={nodes.Icosphere.geometry}
       material={materials["Material.001"]}
+
       // onClick={(e) => setActive(!active)}
     >
       {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
       <meshPhysicalMaterial
-        envMap={cubeCamera.renderTarget.texture}
+        envMap={texture}
+        side={THREE.DoubleSide}
+        roughness={0}
+        reflectivity={0}
+        color={0xc3e4f9}
+        metalness={1}
+        refractionRatio={-1}
+      ></meshPhysicalMaterial>
+      <meshPhysicalMaterial
+        envMap={texture}
         transparent
-        envMapIntensity={1}
+        envMapIntensity={0.3}
         side={THREE.DoubleSide}
         roughness={0}
         reflectivity={0.9}
