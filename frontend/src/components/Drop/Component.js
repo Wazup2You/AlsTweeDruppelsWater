@@ -1,15 +1,8 @@
-import React, { useRef, useState, useMemo } from "react";
-import {
-  Canvas,
-  useFrame,
-  useThree,
-  extend,
-  useLoader,
-} from "react-three-fiber";
+import React, { useRef } from "react";
+import { Canvas, useFrame, useThree, extend } from "react-three-fiber";
 import * as THREE from "three";
-// import goal from "../image/goal.jpg";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
+import { useGLTF } from "@react-three/drei";
 extend({ OrbitControls });
 
 const CameraControls = () => {
@@ -41,6 +34,7 @@ function SkyBox() {
 
 const Drop = () => {
   const { scene, gl } = useThree();
+  const { nodes, materials } = useGLTF("/waterdroplet.gltf");
   // The cubeRenderTarget is used to generate a texture for the reflective sphere.
   // It must be updated on each frame in order to track camera movement and other changes.
   const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
@@ -70,15 +64,15 @@ const Drop = () => {
       ref={mesh}
       scale={[1.5, 1.5, 1.5]}
       castShadow
+      geometry={nodes.Icosphere.geometry}
+      material={materials["Material.001"]}
       // onClick={(e) => setActive(!active)}
     >
-      <sphereGeometry args={[2, 128, 10]} attach="geometry" />
+      {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
       <meshPhysicalMaterial
         envMap={cubeCamera.renderTarget.texture}
-        attach="material"
         transparent
         envMapIntensity={1}
-        color={0xc3e4f9}
         side={THREE.DoubleSide}
         roughness={0}
         reflectivity={0.9}
@@ -101,3 +95,5 @@ export const WaterDrop = () => {
     </Canvas>
   );
 };
+
+useGLTF.preload("/waterdroplet.gltf");
