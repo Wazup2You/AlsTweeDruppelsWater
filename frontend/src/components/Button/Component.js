@@ -3,9 +3,10 @@ import React from "react";
 export function Button(props) {
   if (props.href !== undefined) {
     return (
-      <button>
+      <button type="button" class="btn btn-blue">
         <a href={props.href}>{props.text}</a>
       </button>
     );
   } else return <button onClick={props.onClick}>{props.text}</button>;
 }
+
