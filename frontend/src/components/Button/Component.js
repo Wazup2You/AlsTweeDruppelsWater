@@ -3,7 +3,7 @@ import React from "react";
 export function Button(props) {
   if (props.href !== undefined) {
     return (
-      <button type="button" class="btn btn-blue">
+      <button type="button" className="">
         <a href={props.href}>{props.text}</a>
       </button>
     );
