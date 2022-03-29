@@ -7,7 +7,13 @@ const WaterDropVideo = lazy(() => import("./components/DropVideo/Component"));
 
 function App() {
   return (
-    <Suspense fallback={<div>loading....</div>}>
+    <Suspense
+      fallback={
+        <div className="w-screen h-screen bg-blue-oasen flex justify-center items-center">
+          <h1 className="oasenwhite">loading....</h1>
+        </div>
+      }
+    >
       <div className=" w-screen h-screen bg-blue-oasen overflow-hidden">
         <WaterShader />
         <div className="absolute flex top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-screen">
