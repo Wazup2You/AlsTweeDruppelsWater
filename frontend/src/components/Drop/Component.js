@@ -84,6 +84,7 @@ const Drop = () => {
         metalness={1}
         refractionRatio={-1}
       ></meshPhysicalMaterial>
+
       <meshPhysicalMaterial
         envMap={texture}
         transparent
@@ -98,7 +99,7 @@ const Drop = () => {
   );
 };
 
-export const WaterDrop = () => {
+const WaterDrop = () => {
   return (
     <Canvas>
       <ambientLight color={0xffffff} />
@@ -110,5 +111,5 @@ export const WaterDrop = () => {
     </Canvas>
   );
 };
-
+export default WaterDrop;
 useGLTF.preload("/waterdroplet.gltf");

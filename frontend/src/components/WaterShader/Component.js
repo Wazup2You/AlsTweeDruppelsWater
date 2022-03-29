@@ -38,7 +38,7 @@ function Ocean() {
   return <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} />;
 }
 
-export function WaterShader() {
+function WaterShader() {
   return (
     <Canvas camera={{ position: [0, 5, 100] }}>
       <Suspense fallback={null}>
@@ -48,3 +48,4 @@ export function WaterShader() {
     </Canvas>
   );
 }
+export default WaterShader;
