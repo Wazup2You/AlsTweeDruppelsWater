@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree, extend } from "react-three-fiber";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { useGLTF } from "@react-three/drei";
-
+import videoUrl from "../../videos/bottle.mp4";
 extend({ OrbitControls });
 
 const CameraControls = () => {
@@ -51,6 +51,15 @@ const Drop = () => {
   // Update the cubeCamera with current renderer and scene.
   useFrame(() => cubeCamera.update(gl, scene));
 
+  const [videoTex] = useState(() => {
+    const vid = document.createElement("video");
+    vid.src = videoUrl;
+    vid.crossOrigin = "Anonymous";
+    vid.loop = true;
+    vid.muted = true;
+    return vid;
+  });
+
   const mesh = useRef();
 
   // const [active, setActive] = useState(false);
@@ -65,42 +74,29 @@ const Drop = () => {
   );
   texture.encoding = THREE.sRGBEncoding;
   texture.mapping = THREE.EquirectangularReflectionMapping;
+
+  useEffect(() => void videoTex.play(), [videoTex]);
   return (
     <mesh
-      ref={mesh}
       scale={[1.5, 1.5, 1.5]}
+      // ref={mesh}
+      receiveShadow
       castShadow
       geometry={nodes.Sphere003.geometry}
       material={materials["Material.004"]}
-
-      // onClick={(e) => setActive(!active)}
     >
-      {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
-      <meshPhysicalMaterial
-        envMap={texture}
-        side={THREE.DoubleSide}
-        roughness={0}
-        reflectivity={0}
-        color={0xc3e4f9}
-        metalness={1}
-        refractionRatio={-1}
-      ></meshPhysicalMaterial>
-
-      <meshPhysicalMaterial
-        envMap={texture}
-        transparent
-        envMapIntensity={0.3}
-        side={THREE.DoubleSide}
-        roughness={0}
-        reflectivity={0.9}
-        metalness={0.35}
-        transmission={1}
-      ></meshPhysicalMaterial>
+      <meshBasicMaterial toneMapped={true}>
+        <videoTexture
+          flipY={false}
+          attach="map"
+          args={[videoTex]}
+          encoding={THREE.sRGBEncoding}
+        />
+      </meshBasicMaterial>
     </mesh>
   );
 };
-
-const WaterDrop = () => {
+const WaterDropVideo = () => {
   return (
     <Canvas>
       <ambientLight color={0xffffff} />
@@ -112,5 +108,5 @@ const WaterDrop = () => {
     </Canvas>
   );
 };
-export default WaterDrop;
+export default WaterDropVideo;
 useGLTF.preload("/waterdroplet.gltf");
