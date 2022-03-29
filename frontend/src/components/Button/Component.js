@@ -10,4 +10,3 @@ export function Button(props) {
     );
   } else return <button className={classes} onClick={props.onClick}>{props.text}</button>;
 }
-
