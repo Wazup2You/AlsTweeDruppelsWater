@@ -4,7 +4,6 @@ import { Button } from "./components/Button/Component";
 
 function App() {
   const [scene, setScene] = useState(0);
-  const [color, setColor] = useState("blue-oasen");
 
   return (
     <div>
@@ -36,8 +35,8 @@ function App() {
           <div className={scene === 1 || scene === 4 || scene === 5 ? "block" : "hidden"} >
             <Button text="oasen Drinkwater" onClick={() => setScene(4)} />
           </div>
-          <div className={`${scene === 1 || scene === 4 || scene === 5 ? "block" : "hidden"} bg-${color}`} >
-            < Button text="Store Drinkwater" onClick={() => { setScene(5); setColor("red-500") }} />
+          <div className={scene === 1 || scene === 4 || scene === 5 ? "block" : "hidden"} >
+            < Button text="Store Drinkwater" onClick={() => {setScene(5);}} scene={scene}/>
           </div>
         </div>
 

@@ -8,5 +8,10 @@ export function Button(props) {
         <a href={props.href}>{props.text}</a>
       </button>
     );
-  } else return <button className={classes} onClick={props.onClick}>{props.text}</button>;
+  } else if (props.scene === 5){
+    return(
+      <button className="bg-red-500 w-60 h-20 m-4 hover:bg-blue-500 text-white font-bold rounded" onClick={props.onClick}>{props.text}</button>
+    );
+  }
+  else return <button className={classes} onClick={props.onClick}>{props.text}</button>;
 }
