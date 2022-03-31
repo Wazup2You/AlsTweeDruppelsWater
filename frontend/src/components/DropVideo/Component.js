@@ -3,7 +3,6 @@ import { Canvas, useFrame, useThree, extend } from "react-three-fiber";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { useGLTF } from "@react-three/drei";
-import videoUrl from "../../videos/bottle.mp4";
 extend({ OrbitControls });
 
 const CameraControls = () => {
@@ -35,7 +34,7 @@ function SkyBox() {
   return null;
 }
 
-const Drop = () => {
+const Drop = (props) => {
   const { scene, gl } = useThree();
   const { nodes, materials } = useGLTF("/waterdroplet.gltf");
   // The cubeRenderTarget is used to generate a texture for the reflective sphere.
@@ -53,27 +52,12 @@ const Drop = () => {
 
   const [videoTex] = useState(() => {
     const vid = document.createElement("video");
-    vid.src = videoUrl;
+    vid.src = props.videoUrl;
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
     vid.muted = true;
     return vid;
   });
-
-  const mesh = useRef();
-
-  // const [active, setActive] = useState(false);
-
-  // useFrame(({ clock }) => {
-  //   // mesh.current.rotation.x = Math.sin(clock.getElapsedTime());
-  // });
-
-  const texture = React.useMemo(
-    () => new THREE.TextureLoader().load("waternormals.jpg"),
-    []
-  );
-  texture.encoding = THREE.sRGBEncoding;
-  texture.mapping = THREE.EquirectangularReflectionMapping;
 
   useEffect(() => void videoTex.play(), [videoTex]);
   return (
@@ -96,14 +80,15 @@ const Drop = () => {
     </mesh>
   );
 };
-const WaterDropVideo = () => {
+
+const WaterDropVideo = (props) => {
   return (
     <Canvas>
       <ambientLight color={0xffffff} />
       <CameraControls />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-      <Drop position={[0, 0, 0]} />
+      <Drop position={[0, 0, 0]} videoUrl={props.videoUrl} />
       <SkyBox />
     </Canvas>
   );
