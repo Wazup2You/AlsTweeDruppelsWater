@@ -5,7 +5,6 @@ import { Button } from "./components/Button/Component";
 function App() {
   const [scene, setScene] = useState(0);
 
-
   return (
     <div>
       {/*titels*/}
