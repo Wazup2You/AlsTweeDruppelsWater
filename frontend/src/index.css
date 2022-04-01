@@ -13,28 +13,31 @@
     src: font-url("./fonts/strada.ttf");
     format: ("truetype");
   }
+
+  @font-face {
+    font-family: "strada-light";
+    src: url("./fonts/strada-light.ttf");
+    format: ("truetype");
+  }
 }
 
 @layer components {
   .oasenh1 {
-    @apply font-strada text-blue-oasen text-3xl font-bold;
+    @apply font-strada text-blue-oasen text-6xl font-bold;
   }
   .oasenwhite {
-    @apply font-strada text-white text-3xl font-bold;
+    @apply font-strada text-white text-6xl font-bold;
   }
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: strada-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
