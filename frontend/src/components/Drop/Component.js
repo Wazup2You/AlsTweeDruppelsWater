@@ -36,7 +36,7 @@ function SkyBox() {
 
 const Drop = () => {
   const { scene, gl } = useThree();
-  const { nodes, materials } = useGLTF("/Watermoleculen.gltf");
+  const { nodes, materials } = useGLTF("/watermoleculen2.gltf");
   // The cubeRenderTarget is used to generate a texture for the reflective sphere.
   // It must be updated on each frame in order to track camera movement and other changes.
   const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
@@ -69,68 +69,276 @@ const Drop = () => {
       ref={mesh}
       scale={[1.5, 1.5, 1.5]}
       castShadow
-      geometry={nodes.Sphere003.geometry}
+      geometry={nodes.Droplet.geometry}
       material={materials["Material.004"]}
 
       // onClick={(e) => setActive(!active)}
     >
+        <mesh
+          castShadow
+          receiveShadow
+          scale={0.06}
+          position={[-0.12, -0.19, 0.2]}
+          geometry={nodes.Sphere.geometry}
+          material={nodes.Sphere.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          scale={0.06}
+          position={[-0.12, -0.19, 0.2]}
+          geometry={nodes.Sphere_1.geometry}
+          material={nodes.Sphere_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 1.19, 0.2]} rotation={[0, 0, -0.9]} scale={0.06}
+          geometry={nodes.Sphere016.geometry}
+          material={nodes.Sphere016.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 1.19, 0.2]} rotation={[0, 0, -0.9]} scale={0.06}
+          geometry={nodes.Sphere016_1.geometry}
+          material={nodes.Sphere016_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.14, 0.51, 0.2]} rotation={[0, 0, 1.27]} scale={0.06}
+          geometry={nodes.Sphere024.geometry}
+          material={nodes.Sphere024.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.14, 0.51, 0.2]} rotation={[0, 0, 1.27]} scale={0.06}
+          geometry={nodes.Sphere024_1.geometry}
+          material={nodes.Sphere024_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, -0.1, -0.49]}
+          rotation={[1.74, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere026.geometry}
+          material={nodes.Sphere026.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, -0.1, -0.49]}
+          rotation={[1.74, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere026_1.geometry}
+          material={nodes.Sphere026_1.material}
+        />
+         <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 0.38, -0.08]}
+        rotation={[-1.91, -1.56, 0.86]}
+        scale={0.06}
+          geometry={nodes.Sphere027.geometry}
+          material={nodes.Sphere027.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 0.38, -0.08]}
+        rotation={[-1.91, -1.56, 0.86]}
+        scale={0.06}
+          geometry={nodes.Sphere027_1.geometry}
+          material={nodes.Sphere027_1.material}
+        />
 
-       <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere004.geometry}
-        material={nodes.Sphere004.material}
-        position={[0.23, 0.43, -0.18]}
-      />
-            <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere002.geometry}
-        material={nodes.Sphere002.material}
-        position={[0.13, 1.33, 0]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere001.geometry}
-        material={nodes.Sphere001.material}
-        position={[0.11, 0.71, -0.35]}
-      />
-       <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere005.geometry}
-        material={nodes.Sphere005.material}
-        position={[0.5, 0.03, 0.73]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere006.geometry}
-        material={nodes.Sphere006.material}
-        position={[0.24, 0.08, -0.3]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere007.geometry}
-        material={nodes.Sphere007.material}
-        position={[0.28, 0.03, 0.13]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere008.geometry}
-        material={nodes.Sphere008.material}
-        position={[-0.32, 0.03, 0.34]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Sphere009.geometry}
-        material={nodes.Sphere009.material}
-        position={[-0.23, 0.77, 0.1]}
-      />
+<mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 1.04, -0.14]}
+          rotation={[3.14, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere028.geometry}
+          material={nodes.Sphere028.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 1.04, -0.14]}
+          rotation={[3.14, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere028_1.geometry}
+          material={nodes.Sphere028_1.material}
+        />
+
+<mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 0.19, 0.65]}
+          rotation={[-1.17, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere029.geometry}
+          material={nodes.Sphere029.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.41, 0.19, 0.65]}
+          rotation={[-1.17, -1.56, 0.86]}
+          scale={0.06}
+          geometry={nodes.Sphere029_1.geometry}
+          material={nodes.Sphere029_1.material}
+        />
+
+<mesh
+          castShadow
+          receiveShadow
+          position={[-0.35, 0.06, -0.49]}
+          rotation={[3.11, -0.03, -2.07]}
+          scale={0.06}
+          geometry={nodes.Sphere030.geometry}
+          material={nodes.Sphere030.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.35, 0.06, -0.49]}
+          rotation={[3.11, -0.03, -2.07]}
+          scale={0.06}
+          geometry={nodes.Sphere030_1.geometry}
+          material={nodes.Sphere030_1.material}
+        />
+
+<mesh
+          castShadow
+          receiveShadow
+          position={[0.14, 0.68, -0.49]}
+          rotation={[3.13, 0.04, 2.26]}
+          scale={0.06}
+          geometry={nodes.Sphere031.geometry}
+          material={nodes.Sphere031.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.14, 0.68, -0.49]}
+          rotation={[3.13, 0.04, 2.26]}
+          scale={0.06}
+          geometry={nodes.Sphere031_1.geometry}
+          material={nodes.Sphere031_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.14, -0.68, -0.49]}
+          rotation={[3.1, 0, -2.73]}
+          scale={0.06}
+          geometry={nodes.Sphere032.geometry}
+          material={nodes.Sphere032.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.14, -0.68, -0.49]}
+          rotation={[3.1, 0, -2.73]}
+          scale={0.06}
+          geometry={nodes.Sphere032_1.geometry}
+          material={nodes.Sphere032_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.12, 0.25, -0.49]}
+        rotation={[-3.11, 0.01, 0.7]}
+        scale={0.06}
+          geometry={nodes.Sphere033.geometry}
+          material={nodes.Sphere033.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[0.12, 0.25, -0.49]}
+        rotation={[-3.11, 0.01, 0.7]}
+        scale={0.06}
+          geometry={nodes.Sphere033_1.geometry}
+          material={nodes.Sphere033_1.material}
+        />
+  <mesh
+          castShadow
+          receiveShadow
+                 position={[-0.09, -0.24, -0.19]}
+        rotation={[1.8, -1.01, 2.25]}
+        scale={0.06}
+          geometry={nodes.Sphere034.geometry}
+          material={nodes.Sphere034.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, -0.24, -0.19]}
+          rotation={[1.8, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere034_1.geometry}
+          material={nodes.Sphere034_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 0.9, -0.07]}
+          rotation={[Math.PI, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere035.geometry}
+          material={nodes.Sphere035.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 0.9, -0.07]}
+          rotation={[Math.PI, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere035_1.geometry}
+          material={nodes.Sphere035_1.material}
+        />
+                <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, -0.53, 0.08]}
+          rotation={[2.43, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere036.geometry}
+          material={nodes.Sphere036.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, -0.53, 0.08]}
+          rotation={[2.43, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere036_1.geometry}
+          material={nodes.Sphere036_1.material}
+        />
+                <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 0.02, 0.64]}
+          rotation={[-2.01, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere037.geometry}
+          material={nodes.Sphere037.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          position={[-0.09, 0.02, 0.64]}
+          rotation={[-2.01, -1.01, 2.25]}
+          scale={0.06}
+          geometry={nodes.Sphere037_1.geometry}
+          material={nodes.Sphere037_1.material}
+        />
+
       {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
       <meshPhysicalMaterial
         envMap={texture}
@@ -169,4 +377,4 @@ const WaterDrop = () => {
   );
 };
 export default WaterDrop;
-useGLTF.preload("/Watermoleculen.gltf");
+useGLTF.preload("/watermoleculen2.gltf");
