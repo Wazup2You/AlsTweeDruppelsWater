@@ -10,7 +10,7 @@ const WaterShader = lazy(() => import("./components/WaterShader/Component"));
 const WaterDropVideo = lazy(() => import("./components/DropVideo/Component"));
 
 function App() {
-  const [scene, setScene] = useState(0);
+  const [scene, setScene] = useState(1);
 
   const scenes = {
     0: {
