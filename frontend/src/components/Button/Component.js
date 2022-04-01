@@ -14,9 +14,13 @@ export function Button(props) {
         <a href={props.href}>{props.text}</a>
       </button>
     );
-  } else{
+  } else if (props.scene === 5) {
     return(
-      <button className={`w-60 h-20 m-4 hover:bg-blue-500 text-white font-bold rounded ${props.scene === 5 && clicked ? 'bg-red-500' : 'bg-blue-oasen'}`  } onClick={clickSwitch}>{props.text}</button>
+      <button className={`w-60 h-20 m-4 text-white font-bold rounded ${props.scene === 5 && clicked ? 'bg-red-500' : 'bg-blue-oasen'}`  } onClick={clickSwitch}>{props.text}</button>
+    );
+  } else {
+    return(
+      <button className={`w-60 h-20 m-4 text-white font-bold rounded ${props.scene === 4 && clicked ? 'bg-green-500' : 'bg-blue-oasen'}`  } onClick={clickSwitch}>{props.text}</button>
     );
   }
 }
