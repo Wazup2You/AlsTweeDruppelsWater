@@ -15,6 +15,7 @@ function App() {
         </h3>
 
         {/*navigatie*/}
+        
         <div className="">
           <div className={scene === 0 ? "hidden" : "block"} >
             <Button text="Visuals" onClick={() => setScene(0)} />
@@ -29,7 +30,12 @@ function App() {
             <Button text="Vergelijk het water" onClick={() => setScene(3)} />
           </div>
         </div>
-
+ 
+        <div className= {scene === 4 || scene === 5 ? " p-10 block w-10/12 flex justify-between"  : "hidden"}>
+            <h1 className="w-200 h-20 text-center flex md:text-green-500" > €0,00117</h1> 
+            <h1 className="w-200 h-20 text-left flex md:text-red-500">€0,70</h1>
+        </div>
+        
         {/*quiz*/}
 
         {/* <div>
@@ -37,24 +43,21 @@ function App() {
             <img src={require('./img/417864.png')}></img>
           </div> */}
 
-        <div className="w-10/12 flex justify-between">
-          <div className={scene === 4 || scene === 5 ? "inline" : "hidden"} >
-            <p className="w-200 h-20 text-left flex" >hoi</p> 
-            <p className="w-200 h-20 text-right flex">hoi2</p>
-          </div>
-        </div>
+       
 
 
         <div className="w-10/12 flex justify-between">
           <div className={scene === 1 || scene === 4 || scene === 5 ? "block" : "hidden"} >
             <Button text="oasen Drinkwater" onClick={() => setScene(4)} scene={scene} />
+          </div>   
+          <div className={scene === 4 || scene === 5 ? "block w-2/3" : "hidden"}>
+          <p className= "p-10 text-center"> Wij zijn van mening dat water betaalbaar moet zijn voor iedereen en maken hier werk van </p>  
           </div>
-
           <div className={scene === 1 || scene === 4 || scene === 5 ? "block" : "hidden"} >
             < Button text="Store Drinkwater" onClick={() => setScene(5)} scene={scene} />
           </div>          
         </div>
-
+     
 
         {/*tips*/}
         {/* <div className={scene === 2 ? "block" : "hidden"} >
