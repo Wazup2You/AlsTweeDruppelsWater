@@ -2,8 +2,9 @@ import "./App.css";
 import React, { lazy, Suspense, useState } from "react";
 import videoClean from "./videos/clean.mp4";
 import videoDirty from "./videos/bottle.mp4";
-import videoTip1 from "./videos/water.mp4";
-import videoTip2 from "./videos/water.mp4";
+import videoTip1 from "./videos/tip1.mp4";
+import videoTip2 from "./videos/tip2.mp4";
+import WaterDropPlastic from "./components/DropPlastic/Component";
 
 const WaterDrop = lazy(() => import("./components/Drop/Component"));
 const WaterShader = lazy(() => import("./components/WaterShader/Component"));
@@ -49,7 +50,7 @@ function App() {
               {scene === 0 || scene === 3 ? (
                 <WaterDropVideo videoUrl={scenes[scene].video2} />
               ) : scene === 1 ? (
-                <WaterDrop />
+                <WaterDropPlastic />
               ) : null}
             </div>
           </div>

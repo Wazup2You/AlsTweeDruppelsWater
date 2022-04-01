@@ -37,7 +37,7 @@ function SkyBox() {
 
 const Drop = (props) => {
   const { scene, gl } = useThree();
-  const { nodes, materials } = useGLTF("/watermoleculen2.gltf");
+  const { nodes, materials } = useGLTF("/plasticmoleculen.gltf");
   // The cubeRenderTarget is used to generate a texture for the reflective sphere.
   // It must be updated on each frame in order to track camera movement and other changes.
   const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
@@ -296,7 +296,222 @@ const Drop = (props) => {
           geometry={nodes.Sphere036_1.geometry}
           material={nodes.Sphere036_1.material}
         />
-
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane.geometry}
+          material={nodes.Plane.material}
+          position={[-0.49, -0.12, 0.2]}
+          rotation={[1.47, 0.96, 0.08]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001.geometry}
+          material={nodes.Plane001.material}
+          position={[-0.34, 0.18, 0.2]}
+          rotation={[1.51, 0, 0]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane002.geometry}
+          material={nodes.Plane002.material}
+          position={[0.22, -0.41, 0.2]}
+          rotation={[1.43, 1.15, 0.13]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane003.geometry}
+          material={nodes.Plane003.material}
+          position={[0.21, 0.6, 0.2]}
+          rotation={[1.45, 1.1, 0.11]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane004.geometry}
+          material={nodes.Plane004.material}
+          position={[-0.42, -0.45, 0.2]}
+          rotation={[1.49, 0.83, 0.06]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane005.geometry}
+          material={nodes.Plane005.material}
+          position={[-0.51, 0.42, 0.2]}
+          rotation={[1.41, -1.21, -0.15]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane006.geometry}
+          material={nodes.Plane006.material}
+          position={[-0.09, 0.03, 0.2]}
+          rotation={[1.51, 0, 0]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane007.geometry}
+          material={nodes.Plane007.material}
+          position={[0.12, 0.96, 0.2]}
+          rotation={[1.51, 0.53, 0.03]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane008.geometry}
+          material={nodes.Plane008.material}
+          position={[0.21, 0.02, -0.11]}
+          rotation={[0.54, -0.52, 1.83]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane009.geometry}
+          material={nodes.Plane009.material}
+          position={[0.21, 0.67, -0.3]}
+          rotation={[0.08, -0.52, 1.83]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane010.geometry}
+          material={nodes.Plane010.material}
+          position={[0.21, 1.24, -0.06]}
+          rotation={[1.77, -0.52, 1.83]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane011.geometry}
+          material={nodes.Plane011.material}
+          position={[0.21, -0.22, 0.51]}
+          rotation={[0.96, -0.52, 1.83]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane012.geometry}
+          material={nodes.Plane012.material}
+          position={[-0.51, 0.03, -0.77]}
+          rotation={[0.46, -0.68, -1.25]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane013.geometry}
+          material={nodes.Plane013.material}
+          position={[-0.51, 0.71, -0.03]}
+          rotation={[-0.02, -0.68, -1.25]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane014.geometry}
+          material={nodes.Plane014.material}
+          position={[-0.51, 0.57, -0.48]}
+          rotation={[0.97, -0.68, -1.25]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane015.geometry}
+          material={nodes.Plane015.material}
+          position={[-0.51, -0.43, -0.13]}
+          rotation={[1.02, -0.68, -1.25]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane016.geometry}
+          material={nodes.Plane016.material}
+          position={[-0.3, -0.4, -0.3]}
+          rotation={[-2.52, -0.83, -0.53]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane017.geometry}
+          material={nodes.Plane017.material}
+          position={[-0.66, 0.19, -0.48]}
+          rotation={[1.45, 0.05, 2.83]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane018.geometry}
+          material={nodes.Plane018.material}
+          position={[-0.39, 0.88, -0.3]}
+          rotation={[-2.23, -0.46, -0.06]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane019.geometry}
+          material={nodes.Plane019.material}
+          position={[-0.07, 0.37, -0.3]}
+          rotation={[3.02, -0.98, -1.46]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane020.geometry}
+          material={nodes.Plane020.material}
+          position={[-0.25, -0.07, -0.3]}
+          rotation={[-2.26, -0.52, -0.12]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane021.geometry}
+          material={nodes.Plane021.material}
+          position={[0.24, 0.45, -0.48]}
+          rotation={[1.39, 0.86, 2.96]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane022.geometry}
+          material={nodes.Plane022.material}
+          position={[0.07, 0.84, -0.48]}
+          rotation={[0.01, 1.45, -1.9]}
+          scale={[0.19, 0.19, 0.19]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane023.geometry}
+          material={nodes.Plane023.material}
+          position={[0.21, -0.21, -0.48]}
+          rotation={[-1.22, 1.22, -0.65]}
+          scale={[0.19, 0.19, 0.19]}
+        />
         {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
         <meshPhysicalMaterial
           envMap={texture}
@@ -323,8 +538,9 @@ const Drop = (props) => {
   );
 };
 
-const WaterDrop = () => {
+const WaterDropPlastic = () => {
   const [popUp, showPopUp] = useState(false);
+  console.log(popUp);
   return (
     <>
       <Canvas>
@@ -336,18 +552,16 @@ const WaterDrop = () => {
         <SkyBox />
       </Canvas>
       {popUp ? (
-        <div className="absolute top-1/2 -left-1/2 bg-green-500 w-72 h-30 flex justify-center items-center text-center p-4">
+        <div className="absolute top-1/3 left-1/2 bg-red-500 w-72 h-30 flex justify-center items-center text-center p-4">
           <p>
-            In Nederland kun je beter kraanwater drinken. Het behoort namelijk
-            tot de beste van de wereld. Continu wordt gecontroleerd of het aan
-            alle wettelijke eisen voldoet. Mineraalwater hoeft niet te voldoen
-            aan de eisen van het Nederlandse kraanwater. Zo kan mineraalwater
-            bijvoorbeeld meer zouten bevatten dan ons kraanwater bevat.
+            Wetenschappers van de State University van New York ontdekten dat
+            93% van het flessenwater in de wereld microplastics bevat die je
+            tijdens het drinken inneemt.
           </p>
         </div>
       ) : null}
     </>
   );
 };
-export default WaterDrop;
-useGLTF.preload("/watermoleculen2.gltf");
+export default WaterDropPlastic;
+useGLTF.preload("/plasticmoleculen.gltf");
