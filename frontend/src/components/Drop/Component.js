@@ -36,7 +36,7 @@ function SkyBox() {
 
 const Drop = () => {
   const { scene, gl } = useThree();
-  const { nodes, materials } = useGLTF("/waterdroplet.gltf");
+  const { nodes, materials } = useGLTF("/Watermoleculen.gltf");
   // The cubeRenderTarget is used to generate a texture for the reflective sphere.
   // It must be updated on each frame in order to track camera movement and other changes.
   const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
@@ -69,11 +69,68 @@ const Drop = () => {
       ref={mesh}
       scale={[1.5, 1.5, 1.5]}
       castShadow
-      geometry={nodes.Icosphere.geometry}
-      material={materials["Material.001"]}
+      geometry={nodes.Sphere003.geometry}
+      material={materials["Material.004"]}
 
       // onClick={(e) => setActive(!active)}
     >
+
+       <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere004.geometry}
+        material={nodes.Sphere004.material}
+        position={[0.23, 0.43, -0.18]}
+      />
+            <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere002.geometry}
+        material={nodes.Sphere002.material}
+        position={[0.13, 1.33, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere001.geometry}
+        material={nodes.Sphere001.material}
+        position={[0.11, 0.71, -0.35]}
+      />
+       <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere005.geometry}
+        material={nodes.Sphere005.material}
+        position={[0.5, 0.03, 0.73]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere006.geometry}
+        material={nodes.Sphere006.material}
+        position={[0.24, 0.08, -0.3]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere007.geometry}
+        material={nodes.Sphere007.material}
+        position={[0.28, 0.03, 0.13]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere008.geometry}
+        material={nodes.Sphere008.material}
+        position={[-0.32, 0.03, 0.34]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere009.geometry}
+        material={nodes.Sphere009.material}
+        position={[-0.23, 0.77, 0.1]}
+      />
       {/* <sphereGeometry args={[2, 128, 10]} attach="geometry" /> */}
       <meshPhysicalMaterial
         envMap={texture}
@@ -112,4 +169,4 @@ const WaterDrop = () => {
   );
 };
 export default WaterDrop;
-useGLTF.preload("/waterdroplet.gltf");
+useGLTF.preload("/Watermoleculen.gltf");
