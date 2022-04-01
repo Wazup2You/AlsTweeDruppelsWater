@@ -2,6 +2,7 @@ import "./App.css";
 import React, { lazy, Suspense } from "react";
 
 const WaterDrop = lazy(() => import("./components/Drop/Component"));
+const PlasticDrop = lazy(() => import("./components/PlasticDrop/Component"));
 const WaterShader = lazy(() => import("./components/WaterShader/Component"));
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           </div>
           <div className="w-1/2 flex justify-center items-center">
             <div className="relative w-[30rem] h-[40rem]">
-              <WaterDrop />
+              <PlasticDrop />
             </div>
           </div>
         </div>
