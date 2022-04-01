@@ -36,6 +36,7 @@
 
 body {
   margin: 0;
+  font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Strada-light', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
     sans-serif;
@@ -49,8 +50,12 @@ code {
 }
 
 h1{
-  font-size:larger;
+  font-size: 45px;
   font-family: Strada;
+}
+
+h3{
+  font-size: 25px;
 }
 
 
