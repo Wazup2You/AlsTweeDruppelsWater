@@ -16,6 +16,18 @@ const WaterDropVideo = lazy(() => import("./components/DropVideo/Component"));
 function App() {
   const [scene, setScene] = useState(0);
 
+  const refresh1 = ()=>{
+    // re-renders the component
+    setScene(2);
+    setTimeout(() => {  setScene(0); }, 1);
+}
+
+  const refresh2 = ()=>{
+    // re-renders the component
+    setScene(2);
+    setTimeout(() => {  setScene(3); }, 1);
+}
+
   const scenes = {
     // visuals
     0: {
@@ -174,7 +186,7 @@ function App() {
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
         <div className={scene === 0 ? "hidden" : "block"}>
-          <Button text="Visuals" onClick={() => setScene(0)} />
+          <Button text="Visuals" onClick={refresh1} />
         </div>
         <div className={scene === 1 ? "hidden" : "block"}>
           <Button text="Vergelijk het water" onClick={() => setScene(1)} />
@@ -183,7 +195,7 @@ function App() {
           <Button text="Test je kennis" onClick={() => setScene(2)} />
         </div>
         <div className={scene === 3 ? "hidden" : "block"}>
-          <Button text="Tips" onClick={() => setScene(3)} />
+          <Button text="Tips" onClick={refresh2} />
         </div>
       </div>
     </Suspense>
