@@ -25,6 +25,7 @@ Bronnen:
 5. importeer de videos in 'app.js' en pas de video variabelen aan
 6. `npm run start`
 
+**Placeholder videos voor stap 4** [placeholder videos](https://drive.google.com/drive/folders/1S6KnX8iA3yaO5KWXBdzbysF0zGYMB-nT?usp=sharing)
 **Let op:** Zorg dat je Node versie 14 of hoger op je computer hebt geïnstalleerd, dit kan je controlleren met cmd `node -v`
 
 ## Tailwind
@@ -78,6 +79,7 @@ Sources:
 5. Import the videos into 'app.js' and adjust the video variables.
 6. `npm run start`
 
+**Placeholder videos for step 4** [placeholder videos](https://drive.google.com/drive/folders/1S6KnX8iA3yaO5KWXBdzbysF0zGYMB-nT?usp=sharing)
 **Note:** Make sure you have Node version 14 or higher installed on your computer, you can check this with cmd `node -v`.
 
 ## Tailwind
