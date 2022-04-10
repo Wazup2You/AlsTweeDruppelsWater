@@ -53,16 +53,14 @@ const Drop = (props) => {
 
   const mesh = useRef();
 
-  // useFrame(({ clock }) => {
-  //   // mesh.current.rotation.x = Math.sin(clock.getElapsedTime());
-  // });
-
   const texture = React.useMemo(
     () => new THREE.TextureLoader().load("waternormals.jpg"),
     []
   );
   texture.encoding = THREE.sRGBEncoding;
   texture.mapping = THREE.EquirectangularReflectionMapping;
+
+  // texture and shape of the droplet
   return (
     <>
       <mesh

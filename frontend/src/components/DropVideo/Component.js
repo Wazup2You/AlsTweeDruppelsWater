@@ -50,6 +50,7 @@ const Drop = (props) => {
   // Update the cubeCamera with current renderer and scene.
   useFrame(() => cubeCamera.update(gl, scene));
 
+  // renders the video
   const [videoTex] = useState(() => {
     const vid = document.createElement("video");
     vid.src = props.videoUrl;
@@ -59,7 +60,10 @@ const Drop = (props) => {
     return vid;
   });
 
+  // play the video
   useEffect(() => void videoTex.play(), [videoTex]);
+
+  // texture and shape of the droplet
   return (
     <mesh
       scale={[1.5, 1.5, 1.5]}

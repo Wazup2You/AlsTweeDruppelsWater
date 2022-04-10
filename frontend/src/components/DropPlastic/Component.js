@@ -63,6 +63,8 @@ const Drop = (props) => {
   );
   texture.encoding = THREE.sRGBEncoding;
   texture.mapping = THREE.EquirectangularReflectionMapping;
+
+  // texture and shape of the droplet with plastic molecules
   return (
     <>
       <mesh

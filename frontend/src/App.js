@@ -1,13 +1,17 @@
 import "./App.css";
 import React, { lazy, Suspense, useState } from "react";
 import { Button } from "./components/Button/Component";
-import kraanwater from "./img/kraanwater.png";
-import flesje from "./img/fles.png";
+import WaterDropPlastic from "./components/DropPlastic/Component";
+
+//photos for quiz
+import tapWater from "./img/kraanwater.png";
+import bottle from "./img/fles.png";
+
+// import videos here
 import videoClean from "./videos/clean.mp4";
 import videoDirty from "./videos/bottle.mp4";
 import videoTip1 from "./videos/tip1.mp4";
 import videoTip2 from "./videos/tip2.mp4";
-import WaterDropPlastic from "./components/DropPlastic/Component";
 
 const WaterDrop = lazy(() => import("./components/Drop/Component"));
 const WaterShader = lazy(() => import("./components/WaterShader/Component"));
@@ -31,7 +35,7 @@ function App() {
       video1: videoClean,
       video2: videoDirty,
     },
-    // moleculen
+    // molecules
     1: {
       title: "Klik en sleep de druppels voor meer informatie",
     },
@@ -90,7 +94,7 @@ function App() {
               ) : (
                 <>
                   <div className="w-48 h-full flex justify-center items-center">
-                    <img src={kraanwater} alt="Kraanwater"></img>
+                    <img src={tapWater} alt="Kraanwater"></img>
                     <h1
                       className={
                         scene === 4
@@ -138,7 +142,7 @@ function App() {
               ) : (
                 <>
                   <div className="w-64 h-full flex justify-center items-center flex-col">
-                    <img src={flesje} alt="Water uit plastic flesje"></img>
+                    <img src={bottle} alt="Water uit plastic flesje"></img>
                     <h1
                       className={
                         scene === 4

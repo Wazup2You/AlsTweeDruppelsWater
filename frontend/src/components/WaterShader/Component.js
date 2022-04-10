@@ -11,7 +11,7 @@ import { Sky } from "@react-three/drei";
 import { Water } from "three-stdlib";
 
 extend({ Water });
-
+// ocean background
 function Ocean() {
   const ref = useRef();
   const gl = useThree((state) => state.gl);
